@@ -1,0 +1,20 @@
+
+This repository was split from the Enumdroid repository using the command:
+
+  git filter-branch --prune-empty --tree-filter \
+    'find * -type f | egrep -v "DDDS|^LICENSE|^TODO" | xargs rm -f .project .classpath ' HEAD
+
+so that it can be used as a library JAR in any type of project, not just
+on Android.
+
+It can be released to Sonatype using:
+
+  mvn deploy -DperformRelease=true \
+      -Durl=https://oss.sonatype.org/service/local/staging/deploy/maven2/ \
+      -DrepositoryId=sonatype-nexus-staging
+
+The original project URL was on Google Code:
+  https://code.google.com/p/enumdroid/
+and migrated to Github:
+  https://github.com/raybellis/enumdroid
+
